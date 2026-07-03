@@ -1,0 +1,98 @@
+# 📡 Documentação de Análise da API - ReqRes
+
+## Base URL
+
+https://reqres.in/api
+
+---
+
+# 1. Cenário A: Listar Utilizadores da Página 2
+
+* **Verbo HTTP:** GET
+
+* **URL Completa:** https://reqres.in/api/users?page=2
+
+* **Body da Requisição:** Nenhum
+
+* **Status Code Esperado:** 200 OK
+
+* **Resposta da API (Exemplo do JSON):**
+
+```json
+{
+  "page": 2,
+  "per_page": 6,
+  "total": 12,
+  "total_pages": 2,
+  "data": [
+    {
+      "id": 7,
+      "email": "michael.lawson@reqres.in",
+      "first_name": "Michael",
+      "last_name": "Lawson"
+    }
+  ]
+}
+```
+
+---
+
+# 2. Cenário B: Criar Novo Utilizador
+
+* **Verbo HTTP:** POST
+
+* **URL Completa:** https://reqres.in/api/users
+
+* **Body da Requisição:**
+
+```json
+{
+  "name": "SeuNome",
+  "job": "Analista de Sistemas"
+}
+```
+
+* **Status Code Esperado:** 201 Created
+
+* **Resposta da API (Exemplo do JSON):**
+
+```json
+{
+  "name": "SeuNome",
+  "job": "Analista de Sistemas",
+  "id": "123",
+  "createdAt": "2026-07-03T20:00:00.000Z"
+}
+```
+
+---
+
+# 3. Cenário C: Utilizador Inexistente
+
+* **Verbo HTTP:** GET
+
+* **URL Completa:** https://reqres.in/api/users/23
+
+* **Body da Requisição:** Nenhum
+
+* **Status Code Esperado:** 404 Not Found
+
+* **Resposta da API (Exemplo do JSON):**
+
+```json
+{}
+```
+
+---
+
+# Conclusão
+
+A API ReqRes utiliza os métodos HTTP padrão para comunicação entre cliente e servidor.
+
+* GET para consultar dados.
+* POST para criar novos registos.
+* 404 Not Found para recursos inexistentes.
+* 200 OK para consultas realizadas com sucesso.
+* 201 Created para criação de novos recursos.
+
+A documentação da API apresentou uma estrutura simples e adequada para testes de integração entre Front-end e Back-end.
